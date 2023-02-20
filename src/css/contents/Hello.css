@@ -1,0 +1,17 @@
+.hello {
+    width: 100%;
+    height: 100vh;
+    /* background: var(--black); */
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+.white {
+    background: var(--white);
+} */
+.hello span {
+    font-size: 60px;
+}
+
