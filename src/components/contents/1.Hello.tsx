@@ -10,8 +10,9 @@ export default function Hello() {
         setTimeout(() => {
             sum += array[i];
             console.log(sum);
-        }, (i + 1) * 1000)
+        }, i * 500);
     }
+    
     
 
     return (
