@@ -11,6 +11,7 @@ export default function Hello() {
     const [greeting, setGreeting] = useState('');
     const [count, setCount] = useState(0);
     const [index, setIndex] = useState(0);
+    const [replay, setReplay] = useState(false);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -27,6 +28,7 @@ export default function Hello() {
                     setCount(0);
                 } else {
                     clearInterval(intervalId);
+                    setReplay(true);
                 }
             }, 1500);
         }
@@ -35,11 +37,18 @@ export default function Hello() {
             clearInterval(intervalId)
         }
     })
+
+
     
     return (
         <div className='hello'>
             <span>{greeting}</span>
-            
+            <button
+                className={replay ? 'hello__replay' : 'hello__replay none'}
+
+            >
+                다시 보기
+            </button>
         </div>
     )
 }
