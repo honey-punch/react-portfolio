@@ -1,22 +1,45 @@
 import 'css/contents/Hello.css';
-import { useState, useEffect, ReactElement } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Hello() {
-    const hello = `안녕하세요.`;
-    const array = hello.split('');
-    let sum = '';
-    let a: HTMLElement= document.querySelector('.hello span')!;
+    const hello = [`안녕하세요. 장지철입니다.`,
+                    `'사용자 친화적인'`,
+                    `'쾌적한 UX / UI를 제공하는'`,
+                    `프론트엔드 개발자가 되고 싶습니다.`,
+                    `감사합니다.`
+                    ]
+    const [greeting, setGreeting] = useState('');
+    const [count, setCount] = useState(0);
+    const [index, setIndex] = useState(0);
 
-    for (let i = 0; i < array.length; i++) {
-        setTimeout(() => {
-            sum += array[i];
-            a.textContent = sum
-        }, i * 100);
-    }
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setGreeting(greeting + hello[index][count]);
+            setCount(count + 1);
+        }, 100)
+        
+        if (count == hello[index].length) {
+            clearInterval(intervalId);
+            setTimeout(() => {
+                if (index !== hello.length - 1) {
+                    setIndex(index + 1);
+                    setGreeting('');
+                    setCount(0);
+                } else {
+                    clearInterval(intervalId);
+                }
+            }, 1500);
+        }
+
+        return () => {
+            clearInterval(intervalId)
+        }
+    })
     
     return (
         <div className='hello'>
-            <span></span>
+            <span>{greeting}</span>
+            
         </div>
     )
 }

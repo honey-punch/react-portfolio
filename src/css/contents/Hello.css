@@ -13,5 +13,10 @@
 } */
 .hello span {
     font-size: 60px;
+    text-align: center;
+    line-height: 80px;
+}
+.none {
+    display: none;
 }
 
