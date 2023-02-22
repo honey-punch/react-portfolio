@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function Hello() {
     const hello = [`안녕하세요. 장지철입니다.`,
+                    `커뮤니케이션 능력을 바탕으로`,
                     `'사용자 친화적인'`,
                     `'쾌적한 UX / UI를 제공하는'`,
                     `프론트엔드 개발자가 되고 싶습니다.`,
