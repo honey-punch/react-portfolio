@@ -1,4 +1,4 @@
-import 'css/contents/Hello.css';
+import 'css/contents/1.Hello.css';
 import { useState, useEffect } from 'react';
 
 export default function Hello() {
@@ -18,24 +18,25 @@ export default function Hello() {
             setGreeting(greeting + hello[index][count]);
             setCount(count + 1);
         }, 100)
-        
-        if (count == hello[index].length) {
+
+        const timeoutId = setTimeout(() => {
+            if (index !== hello.length - 1) {
+                setIndex(index + 1);
+                setGreeting('');
+                setCount(0);
+            } else {
+                clearInterval(intervalId);
+                setReplay(true);
+            }
+        }, 1500);
+
+        if (count === hello[index].length) {
             clearInterval(intervalId);
-            const timeoutId = setTimeout(() => {
-                clearTimeout(timeoutId);
-                if (index !== hello.length - 1) {
-                    setIndex(index + 1);
-                    setGreeting('');
-                    setCount(0);
-                } else {
-                    clearInterval(intervalId);
-                    setReplay(true);
-                }
-            }, 1500);
         }
 
         return () => {
-            clearInterval(intervalId)
+            clearInterval(intervalId);
+            clearTimeout(timeoutId);
         }
     })
     
@@ -46,8 +47,6 @@ export default function Hello() {
         setReplay(false);
     }
 
-
-    
     return (
         <div className='hello'>
             <span>{greeting}</span>
