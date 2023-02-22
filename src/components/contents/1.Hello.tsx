@@ -21,7 +21,8 @@ export default function Hello() {
         
         if (count == hello[index].length) {
             clearInterval(intervalId);
-            setTimeout(() => {
+            const timeoutId = setTimeout(() => {
+                clearTimeout(timeoutId);
                 if (index !== hello.length - 1) {
                     setIndex(index + 1);
                     setGreeting('');
@@ -37,6 +38,13 @@ export default function Hello() {
             clearInterval(intervalId)
         }
     })
+    
+    const onClick = () => {
+        setGreeting('');
+        setCount(0);
+        setIndex(0);
+        setReplay(false);
+    }
 
 
     
@@ -45,7 +53,7 @@ export default function Hello() {
             <span>{greeting}</span>
             <button
                 className={replay ? 'hello__replay' : 'hello__replay none'}
-
+                onClick={onClick}
             >
                 다시 보기
             </button>

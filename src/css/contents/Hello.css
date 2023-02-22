@@ -20,11 +20,16 @@
     transform: translate(-50%, -50%);
     transition: 0.3s;
     opacity: 1;
+    visibility: visible;
     padding: 4px;
     margin-top: 20px;
 }
+.hello__replay:hover {
+    text-decoration: underline;
+}
 .none {
     opacity: 0;
+    visibility: hidden;
     top: 57%;
 }
 
