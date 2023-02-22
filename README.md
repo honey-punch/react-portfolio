@@ -12,14 +12,19 @@
 
 ## 3. Functions
 
-### 1
+### 1. Hello
+
+    -useState와 useEffect를 이용해 미리 지정해둔 인삿말을 한글자씩 보여주는 타이핑 효과 구현
+    -index가 끝나면 다시보기 버튼을 띄워 index를 0으로 돌림
+
+### 2. Introduce
 
     -
 
-### 2
+### 3. Project
 
     -
 
-### 3
+### 4. Thank You
 
     -
