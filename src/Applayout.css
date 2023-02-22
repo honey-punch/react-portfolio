@@ -6,8 +6,10 @@
     --light-grey: #c2c2c2;
     --dark-grey: #3e3e3e;
     /* font-size */
-    --small: 12px;
+    --small: 14px;
     --large: 20px;
+    --xlarge: 24px;
+    --xxlarge: 28px;
 }
 
 * {
