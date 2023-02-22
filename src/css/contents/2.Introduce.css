@@ -21,7 +21,18 @@
 .card__item span {
     display: block;
 }
-/* item 공통 */
+/* left card first-child */
+.about-me .card__item:first-child {
+    display: flex;
+}
+.item__me {
+    width: 120px;
+    margin-right: 20px;
+}
+.item__me img {
+    width: 100%;
+    border-radius: 10px;
+}
 .item__name {
     font-size: var(--xxlarge);
     margin-bottom: 10px;
@@ -32,6 +43,7 @@
     font-size: var(--small);
     font-weight: 300;
 }
+/* item 공통 */
 .item__key {
     margin-bottom: 8px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -39,8 +51,6 @@
     font-weight: 700;
     font-size: var(--large);
 }
-
-/* left card item */
 .item__value {
     font-weight: 300;
     line-height: 20px;

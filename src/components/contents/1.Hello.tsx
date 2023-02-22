@@ -18,7 +18,7 @@ export default function Hello() {
         const intervalId = setInterval(() => {
             setGreeting(greeting + hello[index][count]);
             setCount(count + 1);
-        }, 100)
+        }, 70)
 
         const timeoutId = setTimeout(() => {
             if (index !== hello.length - 1) {

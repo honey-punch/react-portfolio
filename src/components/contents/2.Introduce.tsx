@@ -8,14 +8,18 @@ import tailwind from 'img/tailwind.png';
 import adobe1 from 'img/adobe1.png';
 import adobe2 from 'img/adobe2.png';
 import adobe3 from 'img/adobe3.png';
+import me from 'img/me.jpeg';
 
 export default function Introduce() {
     return (
         <div className='introduce'>
             <div className='introduce__card about-me'>
                 <div className="card__item">
-                    <span className='item__name'>장지철</span>
-                    <span className='item__birth'>1992 0812</span>
+                    <div className='item__me'><img src={me} alt="me" /></div>
+                    <div className="item__name-birth">
+                        <span className='item__name'>장 지 철</span>
+                        <span className='item__birth'>1992 0812</span>
+                    </div>
                 </div>
                 <div className="card__item">
                     <span className='item__key'>PHONE NUMBER</span>
@@ -24,6 +28,10 @@ export default function Introduce() {
                 <div className="card__item">
                     <span className='item__key'>E-MAIL</span>
                     <span className='item__value'>wkdwlcjf1234@gmail.com</span>
+                </div>
+                <div className="card__item">
+                    <span className='item__key'>ADDRESS</span>
+                    <span className='item__value'>서울특별시 양천구 신정동</span>
                 </div>
                 <div className="card__item">
                     <span className='item__key'>EDUCATION</span>
@@ -36,40 +44,42 @@ export default function Introduce() {
                 <div className="card__item">
                     <span className='item__key'>CAREER</span>
                     <table className="card__item">
-                        <tr>
-                            <th className='year'>2020</th>
-                            <th className='content'>(주)엠애드커뮤니케이션</th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th className='content'>광고디자인회사</th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th className='content'>디자인팀 / 전략기획팀</th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th className='content'>2020.06 ~ 현재</th>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                            <th className='year'>2018</th>
-                            <th className='content'>유니클로</th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th className='content'>의류매장</th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th className='content'>VMD(Visual Merchandiser)</th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th className='content'>2018.02 ~ 2019.06</th>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th className='year'>2020</th>
+                                <th className='content'>(주)엠애드커뮤니케이션</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th className='content'>광고디자인회사</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th className='content'>디자인팀 / 전략기획팀</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th className='content'>2020.06 ~ 현재</th>
+                            </tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr>
+                                <th className='year'>2018</th>
+                                <th className='content'>유니클로</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th className='content'>의류매장</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th className='content'>VMD(Visual Merchandiser)</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th className='content'>2018.02 ~ 2019.06</th>
+                            </tr>
+                        </tbody>
                     </table>
                     <div className="card__item">
                     <span className='item__key'>SKILL</span>
