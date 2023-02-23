@@ -11,7 +11,7 @@ export default function Header() {
                     <a href="#">2. Introduce</a>
                 </li>
                 <li className='header__li'>
-                    <a href="#">3. Project</a>
+                    <a href="#">3. Projects</a>
                 </li>
                 <li className='header__li'>
                     <a href="#">4. Thank You</a>
