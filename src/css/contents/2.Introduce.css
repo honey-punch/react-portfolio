@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
 }
+/* card 공통 */
 .introduce__card {
     width: 380px;
     height: 650px;
@@ -14,14 +14,29 @@
     box-shadow: 2px 2px 10px var(--light-grey);
     border-radius: 20px;
 }
-/* card 내부 */
 .card__item {
     margin-bottom: 30px;
 }
 .card__item span {
     display: block;
 }
+/* item 공통 */
+.item__key {
+    margin-bottom: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: var(--large);
+}
+.item__value {
+    font-weight: 300;
+    line-height: 20px;
+    font-size: var(--small);
+}
 /* left card first-child */
+.about-me {
+    margin-right: 80px;
+}
 .about-me .card__item:first-child {
     display: flex;
 }
@@ -43,20 +58,6 @@
     font-size: var(--small);
     font-weight: 300;
 }
-/* item 공통 */
-.item__key {
-    margin-bottom: 8px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: var(--large);
-}
-.item__value {
-    font-weight: 300;
-    line-height: 20px;
-    font-size: var(--small);
-}
-
 /* right card item */
 table {
     border-collapse: separate;
