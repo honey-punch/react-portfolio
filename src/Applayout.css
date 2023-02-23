@@ -7,13 +7,15 @@
     --dark-grey: #3e3e3e;
     /* font-size */
     --small: 14px;
-    --large: 20px;
-    --xlarge: 24px;
-    --xxlarge: 28px;
+    --large: 18px;
+    --xlarge: 20px;
+    --xxlarge: 22px;
+    --xxxlarge: 24px;
 }
 
 * {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Gothic A1', sans-serif;
+    /* font-family: 'Roboto Condensed', sans-serif; */
     font-weight: 500;
 }
 .app-layout {

@@ -14,6 +14,8 @@
     font-size: 50px;
     text-align: center;
     line-height: 300px;
+    letter-spacing: -2px;
+    font-weight: 600;
 }
 .hello__replay {
     position: absolute;
@@ -25,6 +27,7 @@
     visibility: visible;
     padding: 4px;
     margin-top: 20px;
+    letter-spacing: -2px;
 }
 .hello__replay:hover {
     text-decoration: underline;

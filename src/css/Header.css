@@ -12,16 +12,13 @@
     align-items: center;
     /* background: rgba(100, 100, 100, 0.5); */
 }
-.header__li {
-
-}
 .header__li a {
     padding: 4px;
     box-sizing: border-box;
-    font-weight: 300;
-    font-family: 'Gloock', serif;
+    font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif;
     color: var(--grey);
-    transition: 0.3s;
+    transition: 0.5s;
 }
 .header__li a:hover {
     color: var(--black);
