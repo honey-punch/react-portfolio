@@ -16,9 +16,18 @@
 }
 .card__item {
     margin-bottom: 30px;
+    transition: 1s;
+    transition-delay: 0.2s;
+    opacity: 0;
+    position: relative;
+    top: 40px;
 }
 .card__item span {
     display: block;
+}
+.animate {
+    opacity: 1;
+    top: 0;
 }
 /* item 공통 */
 .item__key {
