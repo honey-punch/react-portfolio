@@ -39,7 +39,7 @@ export default function Introduce() {
             })
         })
         cardItems.current.forEach((e: HTMLDivElement) => {observer.observe(e)})
-    })
+    }, [animateState])
     
     return (
         <div className='introduce'>
