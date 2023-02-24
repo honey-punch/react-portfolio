@@ -1,15 +1,12 @@
 import 'css/contents/3.Projects.css';
 import browserBtn from 'img/browser-btn.png';
 import { useState } from "react";
-import SofaMusic from './3.projects/1.SofaMusic';
-import TodoList from './3.projects/2.TodoList';
-import EBook from './3.projects/3.EBook';
-import SchoolMusic from './3.projects/4.SchoolMusic';
-import Dalock from './3.projects/5.Dalock';
 
 type tabmenu = {
     name: string;
     key: number;
+    desc: string;
+    skill: string;
 }
 
 export default function Projects() {
@@ -18,26 +15,41 @@ export default function Projects() {
         {
             name: 'Sofa Music',
             key: 0,
+            desc: 'React를 이용해 만든 가상의 음악 엔터테인먼트 웹페이지',
+            skill: 'React, Ts, Css',
         },
         {
             name: 'Todo List',
             key: 1,
+            desc: '',
+            skill: 'React, Ts, Css',
         },
         {
             name: 'e-Book',
             key: 2,
+            desc: '',
+            skill: 'React, Ts, Css',
         },
         {
             name: 'School Music',
             key: 3,
+            desc: '',
+            skill: 'React, Ts, Css',
         },
         {
             name: 'Dalock',
             key: 4,
+            desc: '',
+            skill: 'React, Ts, Css',
         },
     ]
-    const onClick = (index: number) => {
-        setCurrentTab(index)
+    const onClickTabmenu = (index: number) => {
+        setCurrentTab(index);
+    }
+
+    const [currentDetail, setCurrentDetail] = useState(false);
+    const onClickDetail = () => {
+        setCurrentDetail((prev) => !prev)
     }
 
     return (
@@ -50,19 +62,29 @@ export default function Projects() {
                     <ul className='bar__tabmenu-list'>
                         {tabmenuArray.map((element, index) => (
                             <li key={element.key}
-                                className = {index === currentTab ? 'tabmenu current' : 'tabmenu'}
-                                onClick = {() => {onClick(index)}}
+                                className={index === currentTab ? 'tabmenu current' : 'tabmenu'}
+                                onClick = {() => {onClickTabmenu(index)}}
                             >{element.name}</li>
                         ))}
                     </ul>
                 </div>
-                <div className="box__content">
-                    {currentTab == 0 ? (<SofaMusic></SofaMusic>) : null}
-                    {currentTab == 1 ? (<TodoList></TodoList>) : null}
-                    {currentTab == 2 ? (<EBook></EBook>) : null}
-                    {currentTab == 3 ? (<SchoolMusic></SchoolMusic>) : null}
-                    {currentTab == 4 ? (<Dalock></Dalock>) : null}
-                </div>
+                {tabmenuArray.map((element, index) => (
+                    <div key={element.key}
+                        className={index === currentTab ? 'box__content active' : 'box__content'}>
+                        <div className='content__img'>
+                            <img src="#" alt="gif" />{element.name}
+                        </div>
+                        <div className={currentDetail ? 'content__detail active' : 'content__detail'}>
+                            <div className="detail__name">{element.name}</div>
+                            <div className="detail__desc">{element.desc}</div>
+                            <div className="detail__skill">{element.skill}</div>
+                        </div>
+                        <button className='content__detail-btn'
+                                onClick={onClickDetail}
+                                >상세 설명
+                        </button>
+                    </div>
+                ))}
             </div>
         </div>
     )
