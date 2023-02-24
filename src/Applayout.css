@@ -3,9 +3,12 @@
     --white: #fff;
     --black: #000;
     --grey: #848484;
-    --light-grey: #c2c2c2;
-    --extra-light-grey: #e6e6e6;
+    --light-grey: #e8e8e8;
+    --extra-light-grey: #f4f4f4;
     --dark-grey: #3e3e3e;
+    --red: #dd0e0e;
+    --yellow: #f2e30a;
+    --green: #11e30a;
     /* font-size */
     --small: 14px;
     --large: 18px;
