@@ -1,6 +1,6 @@
 import 'css/contents/3.Projects.css';
 import browserBtn from 'img/browser-btn.png';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type tabmenu = {
     name: string;
@@ -63,8 +63,20 @@ export default function Projects() {
         dalock: false
     });
     const onClickDetail = (key: string) => {
-        setCurrentDetail((prev) => {return {...prev, [key]: !prev[key]}})
+        setCurrentDetail((prev) => ({...prev, [key]: !prev[key]}))
     }
+
+    const [upDownState, setUpDownState] = useState(false);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setUpDownState((prev) => (!prev));
+        }, 300)
+
+        return () => {
+            clearInterval(intervalId);
+        }
+    })
 
     return (
         <div className="projects">
@@ -93,9 +105,10 @@ export default function Projects() {
                             <div className="detail__desc">{element.desc}</div>
                             <div className="detail__skill">{element.skill}</div>
                         </div>
-                        <button className='content__detail-btn'
+                        <button className={upDownState ? 'content__detail-btn up-down': 'content__detail-btn'}
                                 onClick={() => {onClickDetail(element.key)}}
-                                >상세 설명
+                                >
+                                <i className="fa-solid fa-angles-up"></i>상세 설명
                         </button>
                     </div>
                 ))}

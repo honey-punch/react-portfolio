@@ -77,10 +77,36 @@
     height: 610px;
     border-radius: 0 0 6px 6px;
     display: none;
+    position: relative;
 }
 .content__detail {
     display: none;
 }
 .active {
     display: block;
+}
+
+.content__detail-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    transition: 0.3s;
+    font-size: var(--small);
+    padding: 6px;
+}
+.content__detail-btn:hover {
+    color: var(--grey);
+}
+.up-down {
+    bottom: 40px;
+}
+.content__detail-btn i {
+    margin-bottom: 10px;
+    font-size: var(--xlarge);
 }
