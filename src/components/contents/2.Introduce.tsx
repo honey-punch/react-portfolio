@@ -28,13 +28,9 @@ export default function Introduce() {
         const observer = new IntersectionObserver((items) => {
             items.forEach((item) => {
                 if (item.isIntersecting && item.intersectionRatio > 0.9) {
-                    setAnimateState((prev) => {
-                        return {...prev, [item.target.id]: true}
-                    })
+                    setAnimateState((prev) => ({...prev, [item.target.id]: true}))
                 } else {
-                    setAnimateState((prev) => {
-                        return {...prev, [item.target.id]: false}
-                    })
+                    setAnimateState((prev) => ({...prev, [item.target.id]: false}))
                 }
             })
         })
