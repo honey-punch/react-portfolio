@@ -4,9 +4,17 @@ import { useState } from "react";
 
 type tabmenu = {
     name: string;
-    key: number;
+    key: string;
     desc: string;
     skill: string;
+}
+type Detail = {
+    [key: string] : boolean;
+    sofaMusic: false,
+    todoList: false,
+    eBook: false,
+    schoolMusic: false,
+    dalock: false
 }
 
 export default function Projects() {
@@ -14,31 +22,31 @@ export default function Projects() {
     const tabmenuArray: Array<tabmenu> = [
         {
             name: 'Sofa Music',
-            key: 0,
+            key: 'sofaMusic',
             desc: 'React를 이용해 만든 가상의 음악 엔터테인먼트 웹페이지',
             skill: 'React, Ts, Css',
         },
         {
             name: 'Todo List',
-            key: 1,
+            key: 'todoList',
             desc: '',
             skill: 'React, Ts, Css',
         },
         {
             name: 'e-Book',
-            key: 2,
+            key: 'eBook',
             desc: '',
             skill: 'React, Ts, Css',
         },
         {
             name: 'School Music',
-            key: 3,
+            key: 'schoolMusic',
             desc: '',
             skill: 'React, Ts, Css',
         },
         {
             name: 'Dalock',
-            key: 4,
+            key: 'dalock',
             desc: '',
             skill: 'React, Ts, Css',
         },
@@ -47,9 +55,15 @@ export default function Projects() {
         setCurrentTab(index);
     }
 
-    const [currentDetail, setCurrentDetail] = useState(false);
-    const onClickDetail = () => {
-        setCurrentDetail((prev) => !prev)
+    const [currentDetail, setCurrentDetail] = useState<Detail>({
+        sofaMusic: false,
+        todoList: false,
+        eBook: false,
+        schoolMusic: false,
+        dalock: false
+    });
+    const onClickDetail = (key: string) => {
+        setCurrentDetail((prev) => {return {...prev, [key]: !prev[key]}})
     }
 
     return (
@@ -72,15 +86,15 @@ export default function Projects() {
                     <div key={element.key}
                         className={index === currentTab ? 'box__content active' : 'box__content'}>
                         <div className='content__img'>
-                            <img src="#" alt="gif" />{element.name}
+                            <img src="#" alt="gif" />
                         </div>
-                        <div className={currentDetail ? 'content__detail active' : 'content__detail'}>
+                        <div className={currentDetail[element.key] ? 'content__detail active' : 'content__detail'}>
                             <div className="detail__name">{element.name}</div>
                             <div className="detail__desc">{element.desc}</div>
                             <div className="detail__skill">{element.skill}</div>
                         </div>
                         <button className='content__detail-btn'
-                                onClick={onClickDetail}
+                                onClick={() => {onClickDetail(element.key)}}
                                 >상세 설명
                         </button>
                     </div>
