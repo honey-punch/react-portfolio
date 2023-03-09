@@ -117,6 +117,17 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: var(--large);
 }
+.detail__github {
+    font-size: var(--small);
+    padding: 8px;
+    background: var(--dark-grey);
+    color: var(--white);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.detail__github:hover {
+    background: var(--grey);
+}
 
 .content__detail-btn {
     display: flex;
