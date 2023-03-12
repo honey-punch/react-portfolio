@@ -49,7 +49,7 @@ export default function Hello() {
     }
 
     return (
-        <div className='hello'>
+        <div className='hello' id='hello'>
             <span>{greeting}</span>
             <button
                 className={replay ? 'hello__replay' : 'hello__replay none'}
