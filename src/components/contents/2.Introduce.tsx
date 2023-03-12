@@ -38,7 +38,7 @@ export default function Introduce() {
     })
     
     return (
-        <div className='introduce'>
+        <div className='introduce' id='introduce'>
             <div className='introduce__card about-me'>
                 <div ref={e => cardItems.current[0] = e} id='name' className={animateState.name ? 'card__item animate' : 'card__item'}>
                     <div className='item__me'><img src={me} alt="me" /></div>

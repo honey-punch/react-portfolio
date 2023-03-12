@@ -92,7 +92,7 @@ export default function Projects() {
     })
 
     return (
-        <div className="projects">
+        <div className="projects" id='projects'>
             <div className="projects__box">
                 <div className="box__bar">
                     <div className="bar__btns">
