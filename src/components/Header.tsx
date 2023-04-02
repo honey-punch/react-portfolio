@@ -14,9 +14,6 @@ export default function Header() {
                 <li className='header__li'>
                     <Link className='li__button' to='projects' spy={true} smooth={true}>3. Projects</Link>
                 </li>
-                <li className='header__li'>
-                    <Link className='li__button' to='' spy={true} smooth={true}>4. Thank You</Link>
-                </li>
             </ul>
         </header>
     )
