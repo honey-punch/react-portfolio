@@ -79,12 +79,12 @@
     display: none;
     position: relative;
 }
-.content__video {
+.content__img {
     width: 100%;
 }
-.content__video video {
+.content__img img {
+    display: block;
     width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 0 0 6px 6px;
 }

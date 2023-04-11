@@ -1,14 +1,4 @@
 import 'css/contents/2.Introduce.css';
-import html from 'img/html.png';
-import css from 'img/css.png';
-import js from 'img/js.png';
-import ts from 'img/ts.png';
-import react from 'img/react.png';
-import tailwind from 'img/tailwind.png';
-import adobe1 from 'img/adobe1.png';
-import adobe2 from 'img/adobe2.png';
-import adobe3 from 'img/adobe3.png';
-import me from 'img/me.jpeg';
 import { useEffect, useState, useRef } from 'react';
 
 export default function Introduce() {
@@ -41,7 +31,7 @@ export default function Introduce() {
         <div className='introduce' id='introduce'>
             <div className='introduce__card about-me'>
                 <div ref={e => cardItems.current[0] = e} id='name' className={animateState.name ? 'card__item animate' : 'card__item'}>
-                    <div className='item__me'><img src={me} alt="me" /></div>
+                    <div className='item__me'><img src={'img/me.jpeg'} alt="me" /></div>
                     <div className="item__name-birth">
                         <span className='item__name'>장 지 철</span>
                         <span className='item__birth'>1992 0812</span>
@@ -113,18 +103,18 @@ export default function Introduce() {
                     <div className="item__value">
                         <span className='item__logo-wrap-title'><i className="fa-solid fa-code icon"></i>DEVELOPMENT</span>
                         <ul className='item__logo-wrap'>
-                            <li className="item__logo"><img src={html} alt="logo" /></li>
-                            <li className="item__logo"><img src={css} alt="logo" /></li>
-                            <li className="item__logo"><img src={js} alt="logo" /></li>
-                            <li className="item__logo"><img src={ts} alt="logo" /></li>
-                            <li className="item__logo"><img src={react} alt="logo" /></li>
-                            <li className="item__logo"><img src={tailwind} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/html.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/css.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/js.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/ts.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/react.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/tailwind.png'} alt="logo" /></li>
                         </ul>
                         <span className='item__logo-wrap-title'><i className="fa-solid fa-pen-fancy icon"></i>DESIGN</span>
                         <ul className='item__logo-wrap'>
-                            <li className="item__logo"><img src={adobe1} alt="logo" /></li>
-                            <li className="item__logo"><img src={adobe2} alt="logo" /></li>
-                            <li className="item__logo"><img src={adobe3} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/adobe1.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/adobe2.png'} alt="logo" /></li>
+                            <li className="item__logo"><img src={'img/adobe3.png'} alt="logo" /></li>
                         </ul>
                     </div>
                 </div>

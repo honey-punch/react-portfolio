@@ -1,5 +1,4 @@
 import 'css/contents/3.Projects.css';
-import browserBtn from 'img/browser-btn.png';
 import { useEffect, useState } from "react";
 
 type tabmenu = {
@@ -28,7 +27,7 @@ export default function Projects() {
             key: 'sofaMusic',
             desc: 'React를 이용해 만든 가상의 음악 엔터테인먼트 웹페이지',
             skill: 'React / TS / CSS',
-            url: '/videos/sofa-music.mp4',
+            url: '/img/sofa-music.jpg',
             github : 'https://github.com/honey-punch/react-sofa-music',
         },
         {
@@ -36,7 +35,7 @@ export default function Projects() {
             key: 'todoList',
             desc: 'React를 이용한 간단한 todo list',
             skill: 'React / TS / CSS',
-            url: '/videos/todo-list.mp4',
+            url: '/img/todo-list.jpg',
             github : 'https://github.com/honey-punch/react-todolist',
         },
         {
@@ -44,7 +43,7 @@ export default function Projects() {
             key: 'eBook',
             desc: 'eBook 가상 웹사이트',
             skill: 'HTML / Tailwind / JS',
-            url: '/videos/ebook.mp4',
+            url: '/img/e-book.jpg',
             github : 'https://github.com/honey-punch/ebook',
         },
         {
@@ -52,7 +51,7 @@ export default function Projects() {
             key: 'schoolMusic',
             desc: "악기 판매사이트 '스쿨뮤직'의 리뉴얼 프로젝트",
             skill: 'HTML / CSS / JS',
-            url: '/videos/school-music.mp4',
+            url: '/img/school-music.jpg',
             github : 'https://github.com/honey-punch/schoolmusic',
         },
         {
@@ -60,7 +59,7 @@ export default function Projects() {
             key: 'dalock',
             desc: "셀프 짐보관 '미니창고 다락'의 리뉴얼 프로젝트",
             skill: 'HTML / CSS / JS',
-            url: '/videos/dalock.mp4',
+            url: '/img/dalock.jpg',
             github : 'https://github.com/honey-punch/dalock',
         },
     ]
@@ -96,7 +95,7 @@ export default function Projects() {
             <div className="projects__box">
                 <div className="box__bar">
                     <div className="bar__btns">
-                        <img src={browserBtn} alt="btns" />
+                        <img src={'img/browser-btn.png'} alt="btns" />
                     </div>
                     <ul className='bar__tabmenu-list'>
                         {tabmenuArray.map((element, index) => (
@@ -110,8 +109,8 @@ export default function Projects() {
                 {tabmenuArray.map((element, index) => (
                 <div key={element.key}
                     className={index === currentTab ? 'box__content active' : 'box__content'}>
-                    <div className='content__video'>
-                        <video src={process.env.PUBLIC_URL + element.url} loop muted autoPlay></video>
+                    <div className='content__img'>
+                        <img src={process.env.PUBLIC_URL + element.url}></img>
                     </div>
                     <div className={currentDetail[element.key] ? 'content__detail active' : 'content__detail'}>
                         <div className="detail__name detail">{element.name}</div>
