@@ -1,5 +1,5 @@
 import 'css/Header.css'
-import { Link } from "../modules/react-scroll";
+import { Link } from "react-scroll";
 
 export default function Header() {
     return (
