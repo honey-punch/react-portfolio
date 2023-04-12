@@ -1,5 +1,5 @@
 import 'css/contents/3.Projects.css';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type tabmenu = {
     name: string;
@@ -83,18 +83,6 @@ export default function Projects() {
         setCurrentDetail((prev) => ({...prev, [key]: !prev[key]}))
     }
 
-    const [upDownState, setUpDownState] = useState(false);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setUpDownState((prev) => (!prev));
-        }, 300)
-
-        return () => {
-            clearInterval(intervalId);
-        }
-    })
-
     const [linkState, setLinkState] = useState(false);
 
     return (
@@ -141,7 +129,7 @@ export default function Projects() {
                         <button className="detail__github detail" onClick={() => {window.open(element.github)}}>코드 보러가기</button>
                     </div>
                     <button
-                        className={upDownState ? 'content__detail-btn up-down': 'content__detail-btn'}
+                        className='content__detail-btn'
                         onClick={() => {onClickDetail(element.key)}}
                     >
                         <i className="fa-solid fa-angles-up"></i>상세 설명

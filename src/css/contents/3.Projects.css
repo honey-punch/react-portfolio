@@ -172,18 +172,27 @@
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 999;
-    transition: 0.3s;
     font-size: var(--small);
     padding: 6px;
     text-shadow: 3px 3px 3px var(--grey);
+    animation: up-down 0.7s infinite;
 }
 .content__detail-btn:hover {
     color: var(--grey);
 }
-.up-down {
-    bottom: 25px;
-}
 .content__detail-btn i {
     margin-bottom: 10px;
     font-size: var(--xlarge);
+}
+
+@keyframes up-down {
+    from {
+        bottom: 20px;
+    }
+    50% {
+        bottom: 25px;
+    }
+    to {
+        bottom: 20px;
+    }
 }
