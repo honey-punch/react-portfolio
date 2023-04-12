@@ -103,24 +103,21 @@ export default function Projects() {
                     </ul>
                 </div>
                 {tabmenuArray.map((element, index) => (
-                <div key={element.key}
-                    className={index === currentTab ? 'box__content active' : 'box__content'}>
-                    <div
-                        className={linkState? 'content__img blur' : 'content__img'}
-                        onClick={() => {window.open(element.url)}}
-                        onMouseEnter={() => {setLinkState(true)}}
-                        onMouseLeave={() => {setLinkState(false)}}
-                    >
-                        <img src={process.env.PUBLIC_URL + element.imgUrl}></img>
+                <div
+                    key={element.key}
+                    className={index === currentTab ? 'box__content active' : 'box__content'}
+                    onClick={() => {window.open(element.url)}}
+                    onMouseEnter={() => {setLinkState(true)}}
+                    onMouseLeave={() => {setLinkState(false)}}
+                >
+                    <div className='content__img'>
+                        <img className={linkState ? 'blur' : ''} src={process.env.PUBLIC_URL + element.imgUrl}></img>
+                        <span className={linkState ? 'content__link active' : 'content__link'}>
+                        사이트 보러가기
+                        </span>
                     </div>
 
-                    <span
-                        className={linkState ? 'content__link active' : 'content__link'}
-                        onMouseEnter={() => {setLinkState(true)}}
-                        onMouseLeave={() => {setLinkState(false)}}
-                    >
-                        사이트 보러가기
-                    </span>
+                    
 
                     <div className={currentDetail[element.key] ? 'content__detail active' : 'content__detail'}>
                         <div className="detail__name detail">{element.name}</div>

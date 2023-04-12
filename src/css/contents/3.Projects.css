@@ -103,6 +103,9 @@
     font-weight: 500;
     text-decoration: underline;
 }
+.content__link:hover {
+    color: var(--grey);
+}
 .content__detail {
     display: none;
     position: absolute;
@@ -118,9 +121,7 @@
 .active {
     display: block;
 }
-.detail {
-    
-}
+
 .detail__name {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: var(--xxxlarge);
