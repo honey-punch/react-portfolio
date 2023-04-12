@@ -81,7 +81,6 @@
 }
 .content__img {
     width: 100%;
-    cursor: pointer;
 }
 .blur {
     opacity: 0.5;
@@ -95,6 +94,7 @@
 }
 .content__link {
     cursor: pointer;
+    padding: 10px;
     display: none;
     position: absolute;
     top: 50%;

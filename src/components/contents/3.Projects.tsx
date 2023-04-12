@@ -106,18 +106,15 @@ export default function Projects() {
                 <div
                     key={element.key}
                     className={index === currentTab ? 'box__content active' : 'box__content'}
-                    onClick={() => {window.open(element.url)}}
                     onMouseEnter={() => {setLinkState(true)}}
                     onMouseLeave={() => {setLinkState(false)}}
                 >
                     <div className='content__img'>
                         <img className={linkState ? 'blur' : ''} src={process.env.PUBLIC_URL + element.imgUrl}></img>
-                        <span className={linkState ? 'content__link active' : 'content__link'}>
+                        <span className={linkState ? 'content__link active' : 'content__link'} onClick={() => {window.open(element.url)}}>
                         사이트 보러가기
                         </span>
                     </div>
-
-                    
 
                     <div className={currentDetail[element.key] ? 'content__detail active' : 'content__detail'}>
                         <div className="detail__name detail">{element.name}</div>
