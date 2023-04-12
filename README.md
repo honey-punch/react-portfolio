@@ -28,7 +28,8 @@
 
 ### 3. Project
 
-    -작업했던 프로젝트들을 화면녹화를 통해 영상으로 만들어 탭메뉴로 구현
+    -작업했던 프로젝트들을 github으로 배포 후 onClick이벤트로 연결
+    -이미지에 직접 onMouseEnter, onMouseLeave이벤트로 blur처리하면서 '사이트 보러가기'문구 출력
     -상세 설명 버튼을 useState를 이용해 애니메이션 효과
     -상세내용들을 객체들의 배열로 저장해 관리, 해당 메뉴에서 상세 설명 버튼 클릭시 보여지게끔 코딩
     -onClick함수를 통해 각각 프로젝트의 github repository와 연결

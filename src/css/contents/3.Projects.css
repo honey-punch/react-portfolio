@@ -81,12 +81,27 @@
 }
 .content__img {
     width: 100%;
+    cursor: pointer;
+}
+.blur {
+    opacity: 0.5;
+    filter: blur(4px);
 }
 .content__img img {
     display: block;
     width: 100%;
     object-fit: cover;
     border-radius: 0 0 6px 6px;
+}
+.content__link {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    text-decoration: underline;
 }
 .content__detail {
     display: none;
@@ -102,7 +117,6 @@
 }
 .active {
     display: block;
-
 }
 .detail {
     

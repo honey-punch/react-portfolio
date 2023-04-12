@@ -6,9 +6,9 @@ type tabmenu = {
     key: string;
     desc: string;
     skill: string;
-    url: string;
+    imgUrl: string;
     github: string;
-
+    url: string;
 }
 type Detail = {
     [key: string] : boolean;
@@ -27,40 +27,45 @@ export default function Projects() {
             key: 'sofaMusic',
             desc: 'React를 이용해 만든 가상의 음악 엔터테인먼트 웹페이지',
             skill: 'React / TS / CSS',
-            url: '/img/sofa-music.jpg',
+            imgUrl: '/img/sofa-music.jpg',
             github : 'https://github.com/honey-punch/react-sofa-music',
+            url: 'https://honey-punch.github.io/react-sofa-music/'
         },
         {
             name: 'Todo List',
             key: 'todoList',
             desc: 'React를 이용한 간단한 todo list',
             skill: 'React / TS / CSS',
-            url: '/img/todo-list.jpg',
+            imgUrl: '/img/todo-list.jpg',
             github : 'https://github.com/honey-punch/react-todolist',
+            url: 'https://honey-punch.github.io/react-todolist/'
         },
         {
             name: 'e-Book',
             key: 'eBook',
             desc: 'eBook 가상 웹사이트',
             skill: 'HTML / Tailwind / JS',
-            url: '/img/e-book.jpg',
+            imgUrl: '/img/e-book.jpg',
             github : 'https://github.com/honey-punch/ebook',
+            url: 'https://honey-punch.github.io/ebook/'
         },
         {
             name: 'School Music',
             key: 'schoolMusic',
             desc: "악기 판매사이트 '스쿨뮤직'의 리뉴얼 프로젝트",
             skill: 'HTML / CSS / JS',
-            url: '/img/school-music.jpg',
+            imgUrl: '/img/school-music.jpg',
             github : 'https://github.com/honey-punch/schoolmusic',
+            url: 'https://honey-punch.github.io/schoolmusic/'
         },
         {
             name: 'Dalock',
             key: 'dalock',
             desc: "셀프 짐보관 '미니창고 다락'의 리뉴얼 프로젝트",
             skill: 'HTML / CSS / JS',
-            url: '/img/dalock.jpg',
+            imgUrl: '/img/dalock.jpg',
             github : 'https://github.com/honey-punch/dalock',
+            url: 'https://honey-punch.github.io/dalock/'
         },
     ]
     const onClickTabmenu = (index: number) => {
@@ -90,6 +95,8 @@ export default function Projects() {
         }
     })
 
+    const [linkState, setLinkState] = useState(false);
+
     return (
         <div className="projects" id='projects'>
             <div className="projects__box">
@@ -99,7 +106,8 @@ export default function Projects() {
                     </div>
                     <ul className='bar__tabmenu-list'>
                         {tabmenuArray.map((element, index) => (
-                            <li key={element.key}
+                            <li
+                                key={element.key}
                                 className={index === currentTab ? 'tabmenu current' : 'tabmenu'}
                                 onClick = {() => {onClickTabmenu(index)}}
                             >{element.name}</li>
@@ -109,19 +117,34 @@ export default function Projects() {
                 {tabmenuArray.map((element, index) => (
                 <div key={element.key}
                     className={index === currentTab ? 'box__content active' : 'box__content'}>
-                    <div className='content__img'>
-                        <img src={process.env.PUBLIC_URL + element.url}></img>
+                    <div
+                        className={linkState? 'content__img blur' : 'content__img'}
+                        onClick={() => {window.open(element.url)}}
+                        onMouseEnter={() => {setLinkState(true)}}
+                        onMouseLeave={() => {setLinkState(false)}}
+                    >
+                        <img src={process.env.PUBLIC_URL + element.imgUrl}></img>
                     </div>
+
+                    <span
+                        className={linkState ? 'content__link active' : 'content__link'}
+                        onMouseEnter={() => {setLinkState(true)}}
+                        onMouseLeave={() => {setLinkState(false)}}
+                    >
+                        사이트 보러가기
+                    </span>
+
                     <div className={currentDetail[element.key] ? 'content__detail active' : 'content__detail'}>
                         <div className="detail__name detail">{element.name}</div>
                         <div className="detail__desc detail">{element.desc}</div>
                         <div className="detail__skill detail">{element.skill}</div>
                         <button className="detail__github detail" onClick={() => {window.open(element.github)}}>코드 보러가기</button>
                     </div>
-                    <button className={upDownState ? 'content__detail-btn up-down': 'content__detail-btn'}
-                            onClick={() => {onClickDetail(element.key)}}
-                            >
-                            <i className="fa-solid fa-angles-up"></i>상세 설명
+                    <button
+                        className={upDownState ? 'content__detail-btn up-down': 'content__detail-btn'}
+                        onClick={() => {onClickDetail(element.key)}}
+                    >
+                        <i className="fa-solid fa-angles-up"></i>상세 설명
                     </button>
                 </div>
                 ))}
