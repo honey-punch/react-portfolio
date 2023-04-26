@@ -10,8 +10,8 @@ export default function Hello() {
                     `감사합니다.`
                     ]
     const [greeting, setGreeting] = useState('');
-    const [count, setCount] = useState(0);
     const [index, setIndex] = useState(0);
+    const [count, setCount] = useState(0);
     const [replay, setReplay] = useState(false);
 
     useEffect(() => {
@@ -20,8 +20,12 @@ export default function Hello() {
             setCount(count + 1);
         }, 70)
 
+        if (count === hello[index].length) {
+            clearInterval(intervalId);
+        }
+
         const timeoutId = setTimeout(() => {
-            if (index !== hello.length - 1) {
+            if (index < hello.length - 1) {
                 setIndex(index + 1);
                 setGreeting('');
                 setCount(0);
@@ -31,15 +35,11 @@ export default function Hello() {
             }
         }, 1500);
 
-        if (count === hello[index].length) {
-            clearInterval(intervalId);
-        }
-
         return () => {
             clearInterval(intervalId);
             clearTimeout(timeoutId);
         }
-    })
+    }, [index, count])
     
     const onClick = () => {
         setGreeting('');
