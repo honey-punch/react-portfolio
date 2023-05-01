@@ -12,11 +12,6 @@ type tabmenu = {
 }
 type Detail = {
     [key: string] : boolean;
-    sofaMusic: false,
-    todoList: false,
-    eBook: false,
-    schoolMusic: false,
-    dalock: false
 }
 
 export default function Projects() {
